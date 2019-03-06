@@ -15,7 +15,7 @@ export class TableComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort; 
   selectedExp: Eksponering;
 
-  constructor(public dialog: MatDialog, private dataSource: TableDataSource) {}
+  constructor(public dialog: MatDialog, public dataSource: TableDataSource) {}
 
   displayedColumns = ['id', 'e_host', 'e_port', 'e_uri'];
 

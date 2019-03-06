@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 export class HeroDetailsComponent implements OnDestroy {
   private subscription: Subscription;
   formTitle = "Endre Lastbalansering";
-  private heroForm = this.fb.group({
+  public heroForm = this.fb.group({
     id: [null, Validators.nullValidator],
     host: [null, Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(10)])],
     protokoll: [null, Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(10)])],
@@ -62,7 +62,7 @@ export class HeroDetailsComponent implements OnDestroy {
 })
 export class HeroCreateFormComponent {
   formTitle = "Registrere ny Lastbalansering";
-  private heroForm = this.fb.group({
+  public heroForm = this.fb.group({
     host: [null, Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(10)])],
     protokoll: [null, Validators.compose([Validators.required, Validators.minLength(1), Validators.maxLength(10)])],
   });

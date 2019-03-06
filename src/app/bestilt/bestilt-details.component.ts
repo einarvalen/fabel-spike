@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 export class BestiltDetailsComponent implements OnDestroy {
   private subscription: Subscription;
   formTitle = "Endre Bestilling";
-  private bestiltForm = this.fb.group({
+  public bestiltForm = this.fb.group({
     id: [null, Validators.nullValidator],
     stat : [null, Validators.compose([Validators.required])],
     sikkerhetsniva : [null, Validators.compose([Validators.required])],
@@ -67,7 +67,7 @@ export class BestiltDetailsComponent implements OnDestroy {
 })
 export class BestiltCreateFormComponent {
   formTitle = "Registrere ny Bestilling";
-  private bestiltForm = this.fb.group({
+  public bestiltForm = this.fb.group({
     stat : [null, Validators.compose([Validators.required])],
     sikkerhetsniva : [null, Validators.compose([Validators.required])],
     miljo : [null, Validators.compose([Validators.required])],
