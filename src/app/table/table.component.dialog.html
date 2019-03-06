@@ -1,0 +1,279 @@
+<!-- <form class="exp" [formGroup]="expForm" novalidate (ngSubmit)="onSubmit()"> -->
+<form class="exp" [formGroup]="expForm" novalidate>
+<h1 mat-dialog-title>{{ formTitle }}</h1>
+<div mat-dialog-content>
+    <mat-card>
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Id" formControlName="id">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Beskrivelse" formControlName="beskrivelse">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="E uri" formControlName="e_uri">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="E port" formControlName="e_port">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="E host" formControlName="e_host">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Eksponering id" formControlName="eksponeringid">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Lb uri" formControlName="lb_uri">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Lb port" formControlName="lb_port">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Lb host" formControlName="lb_host">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Rp uri" formControlName="rp_uri">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Tilgangspolicy" formControlName="tilgangspolicy">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Eksponeringsrute" formControlName="eksponeringsrute">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Gradering" formControlName="gradering">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Innholdstype" formControlName="innholdstype">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Interaksjon" formControlName="interaksjon">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Identitetsleverandor" formControlName="identitetsleverandor">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Authentiseringsstyrke" formControlName="authentiseringsstyrke">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Identitetsbærer" formControlName="identitetsbarer">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Bestillingsnr" formControlName="bestillingsnr">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Merknad 4" formControlName="merknad_4">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Merknad 3" formControlName="merknad_3">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Merknad 2" formControlName="merknad_2">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Merknad 1" formControlName="merknad_1">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Serversert ref" formControlName="serversertref">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Klientsert ref" formControlName="klientsertref">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Meldings streng" formControlName="meldingsstr">
+                <mat-error>
+                    Feltet er <strong>obligatorisk</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    </mat-card>
+</div>
+<div mat-dialog-actions>
+<!--     <button mat-raised-button color="primary" matTooltip="Lagring skjer på server" type="button" [mat-dialog-close]="expForm"> -->
+    <button mat-raised-button color="primary" matTooltip="Lagring skjer på server" type="button" (click)="onSubmit()">
+        <mat-icon>archive</mat-icon>Lagre
+    </button>
+    <button mat-raised-button color="primary" matTooltip="Slett item" (click)="onDelete()" type="button">
+        <mat-icon>delete</mat-icon>Delete
+    </button>
+    <button mat-raised-button color="primary" (click)="onAdd()" type="button">
+        <mat-icon>add</mat-icon>Legg til ny
+    </button>
+    <button mat-raised-button color="primary" (click)="onNoClick()" type="button">
+        <mat-icon>cancel</mat-icon>Avbryt
+    </button>
+    <!--   <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.id" cdkFocusInitial>Ok</button> -->
+</div>
+</form>
+<!--
+eksponeringid beskrivelse e_host e_port e_uri rp_uri lb_host lb_port lb_uri meldingsstr klientsertref serversertref merknad_1 merknad_2 merknad_3 merknad_4 bestillingsnr identitetsbarer authentiseringsstyrke identitetsleverandor interaksjon innholdstype gradering eksponeringsrute tilgangspolicy 
+-->

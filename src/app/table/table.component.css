@@ -1,0 +1,20 @@
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+.full-width-table {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+.full-width {
+  width: 100%;
+}

@@ -1,0 +1,18 @@
+<div class="wrapper">
+	<div class="box box1">
+		<mat-drawer #drawer mode="side" opened role="navigation">
+			<mat-nav-list>
+			<app-bestilt-list></app-bestilt-list>
+			</mat-nav-list>
+		</mat-drawer>
+	</div>
+	 <div class="box box2">
+			<div *ngIf="selectionMade">
+				<app-update-bestilt-details></app-update-bestilt-details>
+			</div>
+			<div *ngIf="!selectionMade">
+				<app-create-bestilt-details></app-create-bestilt-details>
+			</div>
+<!-- 		<button *ngIf="selectionMade" mat-raised-button color="primary" (click)="onAdd()"> <mat-icon>add</mat-icon>Legg til ny</button> -->
+	</div>
+</div>

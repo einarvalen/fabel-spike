@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer mode="side" opened role="navigation">
+
+<!--   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)"> -->
+<!--     <mat-toolbar sticky="true"><mat-icon>reorder</mat-icon>Iktløsninger</mat-toolbar> -->
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    {{ getTitle() }}
+    </mat-toolbar-row>
+  </mat-toolbar>
+    <mat-nav-list *ngFor="let iktlosn of getIktLosninger()" (click)="onSelect(iktlosn)" [class.selected]="iktlosn === selectedIktlosn">
+      <a mat-list-item [routerLink]="['/tabs', iktlosn]"><mat-icon>settings</mat-icon>{{ iktlosn }}</a>
+    </mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+<!--       <a mat-list-item routerLink="/heroes"><mat-icon>help</mat-icon>Heroes</a>
+      <a mat-list-item routerLink="/table"><mat-icon>delete</mat-icon>Table</a>
+      <a mat-list-item routerLink="/address"><mat-icon>search</mat-icon>Address</a> -->
+      <a mat-list-item routerLink="/tree"><mat-icon>archive</mat-icon>Tree</a>
+<!--       <a mat-list-item routerLink="/dash"><mat-icon>save</mat-icon>Dash</a>
+      <a mat-list-item routerLink="/tabs"><mat-icon>home</mat-icon>Tabs</a> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+<!--         *ngIf="isHandset$ | async"> -->
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>&nbsp;&nbsp; FABEL &nbsp;&nbsp;</span>
+      <span> &nbsp;&nbsp; - aktiv konfigurasjon: &nbsp;&nbsp; </span>
+      <span >
+          <mat-select placeholder="(velg iktløsning)">
+            <mat-option *ngFor="let iktlosn of getIktLosninger()" [value]="iktlosn">{{iktlosn}}</mat-option>
+          </mat-select>
+      </span>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

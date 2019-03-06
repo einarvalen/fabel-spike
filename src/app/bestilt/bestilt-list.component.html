@@ -1,0 +1,27 @@
+<div class="example-container mat-elevation-z8">
+  <table mat-table class="full-width-table" [dataSource]="getBestilt()">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="opprettetDato">
+      <th mat-header-cell *matHeaderCellDef> OpprettetDato </th>
+      <td mat-cell *matCellDef="let row"> {{row.opprettetDato.toLocaleDateString() }} </td>
+    </ng-container>
+    <ng-container matColumnDef="miljo">
+      <th mat-header-cell *matHeaderCellDef> Miljo </th>
+      <td mat-cell *matCellDef="let row"> {{row.miljo }} </td>
+    </ng-container>
+    <ng-container matColumnDef="beskrivelse">
+      <th mat-header-cell *matHeaderCellDef> Beskrivelse </th>
+      <td mat-cell *matCellDef="let row"> {{row.beskrivelse }} </td>
+    </ng-container>
+    <ng-container matColumnDef="stat">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let row"> {{row.stat}} </td>
+    </ng-container>
+
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onSelect(row)"  [class.selected]="row === selectedBestilt"></tr>
+  </table>
+</div>

@@ -1,0 +1,110 @@
+<form class="bestilt" [formGroup]="bestiltForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ formTitle }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row" *ngIf="isUpdateForm()">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Id" formControlName="id" [attr.disabled]="true">
+            <mat-error *ngIf="bestiltForm.controls['id'].hasError('required')">
+              Feltet er <strong>obligatorisk</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+<!--
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="lastbalanseringer" formControlName="lastbalanseringer">
+            <mat-error *ngIf="bestiltForm.controls['lastbalanseringer'].hasError('required')">
+              Feltet er <strong>obligatorisk</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+-->
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Stat" formControlName="stat">
+            <mat-error *ngIf="bestiltForm.controls['stat'].hasError('required')">
+              Feltet er <strong>obligatorisk</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Sikkerhetsniva" formControlName="sikkerhetsniva">
+            <mat-error *ngIf="bestiltForm.controls['sikkerhetsniva'].hasError('required')">
+              Feltet er <strong>obligatorisk</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Miljo" formControlName="miljo">
+            <mat-error *ngIf="bestiltForm.controls['miljo'].hasError('required')">
+              Feltet er <strong>obligatorisk</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Kontaktperson" formControlName="kontaktperson">
+            <mat-error *ngIf="bestiltForm.controls['kontaktperson'].hasError('required')">
+              Feltet er <strong>obligatorisk</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Pobref" formControlName="pobref">
+            <mat-error *ngIf="bestiltForm.controls['pobref'].hasError('required')">
+              Feltet er <strong>obligatorisk</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Beskrivelse" formControlName="beskrivelse">
+            <mat-error *ngIf="bestiltForm.controls['beskrivelse'].hasError('required')">
+              Feltet er <strong>obligatorisk</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+<!--             <input matInput placeholder="OpprettetDato" formControlName="opprettetDato"> -->
+            <input matInput [matDatepicker]="myDatepicker" placeholder="OpprettetDato" formControlName="opprettetDato">
+            <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker></mat-datepicker>
+            <mat-error *ngIf="bestiltForm.controls['opprettetDato'].hasError('required')">
+              Feltet er <strong>obligatorisk</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+		  <button mat-raised-button color="primary" matTooltip="Lagring skjer på server" type="submit"><mat-icon>archive</mat-icon>Lagre</button>
+ 	  	<button *ngIf="isUpdateForm()" mat-raised-button color="primary" matTooltip="Slett item" (click)="onDelete()" type="button"><mat-icon>delete</mat-icon>Delete</button>
+		  <button *ngIf="isUpdateForm()" mat-raised-button color="primary" (click)="onAdd()"> <mat-icon>add</mat-icon>Legg til ny</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

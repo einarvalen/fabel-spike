@@ -1,0 +1,44 @@
+<form class="heroes" [formGroup]="heroForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ formTitle }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row" *ngIf="isUpdateForm()">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Id" formControlName="id" [attr.disabled]="true">
+            <mat-error *ngIf="heroForm.controls['id'].hasError('required')">
+              Feltet er <strong>obligatorisk</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Host" formControlName="host" size=100 minlength="100">
+            <mat-error *ngIf="heroForm.controls['host'].hasError('required')">
+              Feltet er <strong>obligatorisk</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Protokoll" formControlName="protokoll">
+            <mat-error *ngIf="heroForm.controls['protokoll'].hasError('required')">
+              Feltet er <strong>obligatorisk</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+		  <button mat-raised-button color="primary" matTooltip="Lagring skjer på server" type="submit"><mat-icon>archive</mat-icon>Lagre</button>
+ 	  	<button *ngIf="isUpdateForm()" mat-raised-button color="primary" matTooltip="Slett item" (click)="onDelete()" type="button"><mat-icon>delete</mat-icon>Delete</button>
+		  <button *ngIf="isUpdateForm()" mat-raised-button color="primary" (click)="onAdd()"> <mat-icon>add</mat-icon>Legg til ny</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
